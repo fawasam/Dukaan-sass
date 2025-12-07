@@ -6,7 +6,7 @@ const logger = createLogger(config);
 
 const server = Bun.serve({
   port: config.port || 4000,
-  fetch(request) {
+  fetch(request: Request) {
     const url = new URL(request.url);
 
     if (url.pathname === '/health') {
