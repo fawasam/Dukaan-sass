@@ -1,0 +1,18 @@
+{
+  "name": "ecommerce-platform",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "services/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "echo \"Run services individually, e.g. cd services/api-gateway && bun run dev\"",
+    "lint": "eslint . --ext .ts,.tsx",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^22.0.0"
+  }
+}

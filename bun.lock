@@ -1,0 +1,45 @@
+{
+  "lockfileVersion": 1,
+  "configVersion": 1,
+  "workspaces": {
+    "": {
+      "name": "dukaan",
+      "devDependencies": {
+        "@types/node": "^22.0.0",
+        "typescript": "^5.6.0",
+      },
+    },
+    "packages/shared-config": {
+      "name": "@ecom/config",
+      "version": "1.0.0",
+    },
+    "packages/shared-logger": {
+      "name": "@ecom/logger",
+      "version": "1.0.0",
+      "dependencies": {
+        "@ecom/config": "workspace:*",
+      },
+    },
+    "services/api-gateway": {
+      "name": "@ecom/api-gateway",
+      "version": "1.0.0",
+      "dependencies": {
+        "@ecom/config": "workspace:*",
+        "@ecom/logger": "workspace:*",
+      },
+    },
+  },
+  "packages": {
+    "@ecom/api-gateway": ["@ecom/api-gateway@workspace:services/api-gateway"],
+
+    "@ecom/config": ["@ecom/config@workspace:packages/shared-config"],
+
+    "@ecom/logger": ["@ecom/logger@workspace:packages/shared-logger"],
+
+    "@types/node": ["@types/node@22.19.1", "", { "dependencies": { "undici-types": "~6.21.0" } }, "sha512-LCCV0HdSZZZb34qifBsyWlUmok6W7ouER+oQIGBScS8EsZsQbrtFTUrDX4hOl+CS6p7cnNC4td+qrSVGSCTUfQ=="],
+
+    "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
+
+    "undici-types": ["undici-types@6.21.0", "", {}, "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="],
+  }
+}

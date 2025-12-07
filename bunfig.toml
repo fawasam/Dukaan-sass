@@ -1,0 +1,6 @@
+[test]
+preload = ["./tsconfig-paths-register.ts"]
+
+[run]
+# optional: default entry if you run just `bun run`
+bun = true
